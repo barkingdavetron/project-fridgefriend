@@ -41,10 +41,8 @@ const SignIn = () => {
 
   return (
     <View style={styles.container}>
-      {/* Render the title */}
       <Text style={styles.title}>Sign in</Text>
 
-      {/* Email input field */}
       <TextInput
         style={styles.input}
         placeholder="Email"
@@ -53,7 +51,6 @@ const SignIn = () => {
         keyboardType="email-address"  // Ensures the correct keyboard type is used
       />
       
-      {/* Password input field */}
       <TextInput
         style={styles.input}
         placeholder="Password"

@@ -34,10 +34,8 @@ const SignUp = () => {
   return (
     // Main container for the SignUp screen
     <View style={styles.container}>
-      {/* Title of the screen */}
       <Text style={styles.title}>Sign Up</Text>
 
-      {/* Input fields for username, email, and password */}
       <TextInput
         style={styles.input}
         placeholder="Username"

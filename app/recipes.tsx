@@ -3,8 +3,8 @@ import { View, TextInput, Button, FlatList, Text, StyleSheet } from 'react-nativ
 import axios from 'axios'; // Importing Axios for making API requests
 
 
-const API_KEY = '528ac505cbdc4e7bacbaafb772d4062e'; // Define Spoonacular API key 
-const BASE_URL = 'https://api.spoonacular.com/recipes/complexSearch'; // Base URL for Spoonacular's complex search API
+const KEY = '528ac505cbdc4e7bacbaafb772d4062e'; // Define Spoonacular API key 
+const URL = 'https://api.spoonacular.com/recipes/complexSearch'; // Base URL for Spoonacular's complex search API
 
 const RecipeSearch = () => {
   // State hooks for handling the search term recipes loading state and errors
@@ -25,10 +25,10 @@ const RecipeSearch = () => {
 
     try {
       // Make the API request to Spoonacular
-      const response = await axios.get(BASE_URL, {
+      const response = await axios.get(URL, {
         params: { // Set query parameters for the API request
           query: searchTerm, // Search term entered by the user
-          apiKey: API_KEY, // API key for authentication
+          apiKey: KEY, // API key for authentication
         },
       });
 
@@ -41,8 +41,8 @@ const RecipeSearch = () => {
   };
 
   return (
-    <View style={styles.container}> {/* Container to hold the components */}
-      {/* Search input field */}
+    <View style={styles.container}> 
+   
       <TextInput
         style={styles.input}
         placeholder="Search for potato recipes" // Placeholder text for the input field
@@ -50,16 +50,12 @@ const RecipeSearch = () => {
         onChangeText={setSearchTerm} // Updates search term on input change
       />
       
-      {/* Button to trigger the search */}
-      <Button title="Search Recipes" onPress={searchRecipes} /> {/* On press call searchRecipes */}
+      <Button title="Search Recipes" onPress={searchRecipes} /> 
 
-      {/* Loading state */}
-      {isLoading && <Text>Loading...</Text>} {/* Display loading text while fetching */}
+      {isLoading && <Text>Loading...</Text>} 
 
-      {/* Error state */}
-      {error && <Text style={styles.error}>{error}</Text>} {/* Display error message if there’s an issue */}
+      {error && <Text style={styles.error}>{error}</Text>} 
 
-      {/* List of recipes */}
       <FlatList
         data={recipes} // Data passed to FlatList for rendering
         keyExtractor={(item) => item.id.toString()} // Unique key for each recipe (ID)

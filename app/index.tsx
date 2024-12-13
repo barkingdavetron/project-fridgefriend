@@ -9,15 +9,12 @@ const HomeScreen = () => {
   const router = useRouter();
 
   return (
-    // Main container of the screen, styled to center content
     <View style={styles.container}>
       
-      {/* Touchable button for Sign In, triggers navigation to the /sign_in screen */}
       <TouchableOpacity style={styles.button} onPress={() => router.push('/sign_in')}>
         <Text style={styles.buttonText}>Sign In</Text>
       </TouchableOpacity>
 
-      {/* Touchable button for Sign Up, triggers navigation to the /sign_up screen */}
       <TouchableOpacity style={styles.button} onPress={() => router.push('/sign_up')}>
         <Text style={styles.buttonText}>Sign Up</Text>
       </TouchableOpacity>

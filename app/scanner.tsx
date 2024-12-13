@@ -30,12 +30,12 @@ export default function App() {
   };
 
   return (
-    <View style={styles.container}>  // Main container for the layout
-      {/* Button to trigger the image picker when pressed */}
+    <View style={styles.container}>  
+    
       <Button title="Take a Picture" onPress={pickImage} />
       
-      {/* Conditionally render the image if it's available */}
-      {image && <Image source={{ uri: image }} style={styles.image} />}  // Display the picked image
+     
+      {image && <Image source={{ uri: image }} style={styles.image} />}  
     </View>
   );
 }
